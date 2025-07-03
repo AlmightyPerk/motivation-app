@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Motivation - NuLife Nation</title>
+    
+    <!-- iOS PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="NuLife Motivation">
+    <meta name="theme-color" content="#667eea">
+    
+    <!-- iOS Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiByeD0iNDAiIGZpbGw9InVybCgjZ3JhZGllbnQwKSIvPgo8ZGVmcz4KPGXPYW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQwIiB4MT0iMCIgeTE9IjAiIHgyPSIxODAiIHkyPSIxODAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzY2N2VlYSIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM3NjRiYTIiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8dGV4dCB4PSI5MCIgeT0iMTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJnb2xkIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNDgiIGZvbnQtd2VpZ2h0PSJib2xkIj5OTDwvdGV4dD4KPC9zdmc+">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiTnVMaWZlIE1vdGl2YXRpb24iLCJzaG9ydF9uYW1lIjoiTnVMaWZlIiwiZGVzY3JpcHRpb24iOiJEYWlseSBNb3RpdmF0aW9uIGFuZCBTdWNjZXNzIEFmZmlybWF0aW9ucyIsInN0YXJ0X3VybCI6Ii8iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjNjY3ZWVhIiwidGhlbWVfY29sb3IiOiIjNjY3ZWVhIiwiaWNvbnMiOlt7InNyYyI6ImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjNhV1IwYUQwaU1UZ3dJaUJvWldsbmFIUTlJakU0TUNJaWRtbGxkMEp2ZUQwaU1DQXdJREU0TUNBeE9EQWlJR1pwYkd3OUltNXZibVVpSUhodGJHNXpQU0pvZEhSd09pOHZkM2QzTG5jekxtOXlaeTh5TURBd0wzTjJaeUkrQ2p4eVpXTjBJSGRwWkhSb1BTSXhPREFpSUdobGFXZG9kRDBpTVRnd0lpQnllRDBpTkRBaUlHWnBiR3c5SW5WeWJDZ2paMkpoWkdsbGJuUXdLU0l2UGdvOFpHVm1jejROQ2p4c2FXNWxZWEpIY21Ga2FXVnVkQ0JwWkQwaVozSmhaR2xsYm5Rd0lpQjRNVDBpTUNJZ2VURTlJakFpSUhneVBTSXhPREFpSUhrelhTSXhPREFpSUdkeVlXUnBaVzUwVlc1cGRITTlJblZ6WlhKVGNHRmpaVTl1VlhObElqNE5Danh6ZEc5d0lITjBiM0F0WTI5c2IzSTlJaU0yTmpkbFpXRWlMejROQ2p4emRHOXdJRzltWm5ObGREMGlNU0lnYzNSdmNDMWpiMnh2Y2owaUl6YzJOR0poTWlJdlBnMEtQQzlzYVc1bFlYSkhjbUZrYVdWdWRENE5Danh2WkdWbWN6NE5Danh5WldOMElIZHBaSFJvUFNJeE9EQWlJR2hsYVdkb2REMGlNVGd3SWlCeWVEMGlOREFpSUdacGJHdzlJblZ5YkNnalozSmhaR2xsYm5Rd0tTSXZQZ284TDJSbFpuTStQZ3A4ZEdWNGRDQjRQU0k1TUNJZ2VUMGlNVEF3SWlCMFpYaDBMV0Z1WTJodmNqMGliV2xrWkd4bElpQm1hV3hzUFNKbmIyeGtJaUJtYjI1MExXWmhiV2xzZVQwaVFYSnBZV3dzSUhOaGJuTXRjMlZ5YVdZaUlHWnZiblF0YzJsNlpUMGlORGdpSUdadmJuUXRkMlZwWjJoMFBTSmliMnhrSWo1T1REd3ZkR1Y0ZEQ0TlBqeGNMM04yWno0PSIsInNpemVzIjoiMTgweDMxMiIsInR5cGUiOiJpbWFnZS9zdmcreG1sIn1dfQ==">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: white;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .date {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon {
+            font-size: 20px;
+        }
+
+        .quote {
+            font-style: italic;
+            line-height: 1.6;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .author {
+            text-align: right;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        .affirmation {
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .reminder {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .refresh-btn {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            border: none;
+            border-radius: 25px;
+            padding: 12px 30px;
+            color: #333;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 20px auto 0;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .refresh-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+        }
+
+        .refresh-btn:active {
+            transform: translateY(0);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .card:nth-child(2) { animation-delay: 0.1s; }
+        .card:nth-child(3) { animation-delay: 0.2s; }
+        .card:nth-child(4) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">NuLife Nation</div>
+            <div class="date" id="currentDate"></div>
+            <div class="subtitle">Daily Motivation & Success</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">
+                <span class="icon">💭</span>
+                Daily Wisdom
+            </div>
+            <div class="quote" id="dailyQuote"></div>
+            <div class="author" id="quoteAuthor">- Jim Rohn</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">
+                <span class="icon">🚀</span>
+                Success Affirmation
+            </div>
+            <div class="affirmation" id="successAffirmation"></div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">
+                <span class="icon">👑</span>
+                Leadership Reminder
+            </div>
+            <div class="reminder" id="leadershipReminder"></div>
+        </div>
+
+        <button class="refresh-btn" onclick="refreshContent()">
+            Generate New Motivation
+        </button>
+        
+        <div style="text-align: center; margin-top: 20px; font-size: 12px; opacity: 0.7;">
+            <p>📱 <strong>To Install on iPhone:</strong></p>
+            <p>1. Tap the Share button (□↗) at the bottom</p>
+            <p>2. Scroll down and tap "Add to Home Screen"</p>
+            <p>3. Tap "Add" to create your app icon</p>
+            <p style="margin-top: 10px;">🔄 New content appears automatically each day</p>
+        </div>
+    </div>
+
+    <script>
+        const motivationalQuotes = [
+            // Jim Rohn Quotes
+            { quote: "You are the average of the five people you spend the most time with.", author: "Jim Rohn" },
+            { quote: "Success is nothing more than a few simple disciplines, practiced every day.", author: "Jim Rohn" },
+            { quote: "Don't wish it were easier; wish you were better.", author: "Jim Rohn" },
+            { quote: "Take care of your body. It's the only place you have to live.", author: "Jim Rohn" },
+            { quote: "If you don't design your own life plan, chances are you'll fall into someone else's plan.", author: "Jim Rohn" },
+            { quote: "You must take personal responsibility. You cannot change the circumstances, but you can change yourself.", author: "Jim Rohn" },
+            { quote: "The few who do are the envy of the many who only watch.", author: "Jim Rohn" },
+            { quote: "Success is steady progress toward one's personal goals.", author: "Jim Rohn" },
+            { quote: "Work harder on yourself than you do on your job.", author: "Jim Rohn" },
+            { quote: "Discipline is the bridge between goals and accomplishment.", author: "Jim Rohn" },
+            { quote: "Don't join an easy crowd; you won't grow. Go where the expectations are high.", author: "Jim Rohn" },
+            { quote: "The major value in life is not what you get. The major value in life is what you become.", author: "Jim Rohn" },
+            { quote: "Success is not to be pursued; it is to be attracted by the person you become.", author: "Jim Rohn" },
+            { quote: "Your life does not get better by chance, it gets better by change.", author: "Jim Rohn" },
+            { quote: "Formal education will make you a living; self-education will make you a fortune.", author: "Jim Rohn" },
+            { quote: "The walls we build around us to keep sadness out also keeps out the joy.", author: "Jim Rohn" },
+            
+            // Neville Goddard Quotes
+            { quote: "Assume the feeling of your wish fulfilled and observe the route that your attention follows.", author: "Neville Goddard" },
+            { quote: "The world is yourself pushed out. Ask yourself what you want and then give it to yourself.", author: "Neville Goddard" },
+            { quote: "Your imagination is the actual creative power of God within you.", author: "Neville Goddard" },
+            { quote: "All transformation begins with an intense, burning desire to be transformed.", author: "Neville Goddard" },
+            { quote: "What you believe to be true of another, you are first believing to be true of yourself.", author: "Neville Goddard" },
+            { quote: "The feeling of the wish fulfilled is the secret of all prayer.", author: "Neville Goddard" },
+            { quote: "Every moment of your life, consciously or unconsciously, you are assuming a feeling.", author: "Neville Goddard" },
+            { quote: "Nothing comes from without. All things come from within.", author: "Neville Goddard" },
+            { quote: "Your conception of yourself is what you project upon the world.", author: "Neville Goddard" },
+            { quote: "Dare to believe in the reality of your assumption and watch the world play its part.", author: "Neville Goddard" },
+            { quote: "The awakened person sees the world as it is: one continuous fabric of consciousness.", author: "Neville Goddard" },
+            { quote: "You are already that which you want to be, and your refusal to believe this is the only reason you do not see it.", author: "Neville Goddard" },
+            { quote: "Change your conception of yourself, and you will automatically change the world in which you live.", author: "Neville Goddard" },
+            { quote: "You do not attract what you want. You attract what you believe to be true.", author: "Neville Goddard" },
+            { quote: "The most important thing is to make the unreal seem real, because all things are possible to him who believes.", author: "Neville Goddard" }
+        ];
+
+        const successAffirmations = [
+            "Byron, why are you so naturally successful at everything you touch? Your mind is programmed for wealth and abundance.",
+            "Byron, how did you become such a brilliant strategist so quickly? Your subconscious mind generates million-dollar ideas effortlessly.",
+            "Byron, why does money flow to you so easily and consistently? You are a magnet for prosperity and NuLife Nation gains more clients daily.",
+            "Byron, how did you develop such an incredible ability to transform businesses? Your success is inevitable and unstoppable.",
+            "Byron, why are you so gifted at creating wealth? Your subconscious mind works around the clock to manifest your desires.",
+            "Byron, how did you become so irresistibly attractive to success? Every cell in your body vibrates with prosperity.",
+            "Byron, why does everything you touch turn to gold? Your success mindset creates automatic wealth generation.",
+            "Byron, how did you master the art of business transformation so effortlessly? You are becoming richer and more successful every single day.",
+            "Byron, why are you such a powerful magnet for millionaire opportunities? Your subconscious mind attracts abundance like a gravitational force.",
+            "Byron, how did you develop such extraordinary leadership abilities? You are programmed for success and NuLife Nation's growth is exponential.",
+            "Byron, why does success come so naturally to you? Your mind is wired for wealth and your bank account reflects this truth.",
+            "Byron, how did you become so skilled at creating multiple income streams? Every thought you think multiplies your prosperity.",
+            "Byron, why are you so exceptional at building business empires? Your success is written in your DNA and coded in your subconscious.",
+            "Byron, how did you develop such magnetic charisma for attracting clients? You are a success machine and wealth flows to you automatically.",
+            "Byron, why are you destined for extraordinary riches? Your subconscious mind is a wealth-generating powerhouse working 24/7 for your benefit.",
+            "Byron, how did you become such a master at turning ideas into massive profits? Your brain processes opportunities faster than a supercomputer.",
+            "Byron, why are you so naturally gifted at reading market trends? Your intuition guides you to perfect timing and maximum returns.",
+            "Byron, how did you develop such an unstoppable mindset? You are programmed for victory and failure is not in your vocabulary.",
+            "Byron, why do high-value clients seek you out specifically? Your reputation for excellence precedes you everywhere you go.",
+            "Byron, how did you become so skilled at scaling businesses rapidly? You have the Midas touch and everything you build multiplies exponentially.",
+            "Byron, why are you so naturally confident in high-stakes situations? Your presence commands respect and your decisions create fortunes.",
+            "Byron, how did you develop such incredible business intuition? Your subconscious mind calculates success probabilities with perfect accuracy.",
+            "Byron, why are you so magnetic to wealthy, influential people? Your energy attracts your tribe of successful, like-minded individuals.",
+            "Byron, how did you become so exceptional at closing million-dollar deals? Your words carry the power of persuasion and prosperity.",
+            "Byron, why does the universe conspire to help you succeed? You are aligned with abundance and prosperity flows through you naturally.",
+            "Byron, how did you develop such extraordinary vision for future opportunities? Your mind sees possibilities that others can't even imagine.",
+            "Byron, why are you so naturally innovative and creative? Your brain generates breakthrough solutions that revolutionize entire industries.",
+            "Byron, how did you become such a powerful catalyst for transformation? You turn struggling businesses into market leaders with surgical precision.",
+            "Byron, why are you so skilled at building lasting wealth? Your financial intelligence grows stronger every day and your net worth reflects this truth.",
+            "Byron, how did you develop such incredible resilience and determination? You are unstoppable and every setback only makes you stronger and richer.",
+            "Byron, why are you destined to become one of the most successful entrepreneurs of your generation? Your legacy of wealth and impact is already being written."
+        ];
+
+        const leadershipReminders = [
+            "Byron, your leadership creates ripples of positive change that reach further than you realize. You are irreplaceable and deeply needed. NuLife Nation provides invaluable solutions that businesses can't find anywhere else.",
+            "Byron, your visionary mind sees opportunities where others see obstacles. You are a rare catalyst for transformation. NuLife Nation is revolutionizing entire industries with your innovative approach.",
+            "Byron, your authentic leadership style inspires others to reach heights they never thought possible. You are essential to this world. NuLife Nation fills a critical void in the marketplace that no competitor can match.",
+            "Byron, your ability to transform chaos into order makes you invaluable to every organization you touch. You are a master architect of success. NuLife Nation creates breakthrough results that traditional consulting cannot deliver.",
+            "Byron, your leadership illuminates the path for others to follow their highest potential. You are a beacon of hope in the business world. NuLife Nation solves problems that have stumped industry experts for decades.",
+            "Byron, your unique combination of wisdom and action creates unstoppable momentum. You are exactly what the world needs right now. NuLife Nation is the missing piece that businesses desperately seek.",
+            "Byron, your leadership transforms fear into confidence and doubt into determination. You are a force of nature. NuLife Nation provides the breakthrough strategies that separate winners from wannabes.",
+            "Byron, your presence alone elevates the energy and potential of every room you enter. You are a multiplier of human potential. NuLife Nation delivers results that seem impossible to the uninitiated.",
+            "Byron, your leadership creates a legacy that will outlast your lifetime. You are building something eternal. NuLife Nation is pioneering methodologies that will reshape business forever.",
+            "Byron, your ability to see the diamond in the rough makes you a treasure to this world. You are irreplaceable. NuLife Nation transforms struggling businesses into market leaders with surgical precision.",
+            "Byron, your leadership burns away limitations and ignites possibilities in others. You are a catalyst for human greatness. NuLife Nation provides the secret sauce that turns ordinary businesses into extraordinary success stories.",
+            "Byron, your vision extends beyond the horizon while your actions create immediate impact. You are a bridge between dreams and reality. NuLife Nation is the ultimate competitive advantage in today's marketplace.",
+            "Byron, your leadership creates abundance where scarcity once existed. You are a miracle worker in business. NuLife Nation unlocks hidden potential that companies didn't even know they possessed.",
+            "Byron, your ability to simplify complexity makes you indispensable to this world. You are a master translator of success. NuLife Nation delivers clarity and direction when businesses feel lost and confused.",
+            "Byron, your leadership plants seeds of greatness that grow into forests of success. You are a cultivator of human potential. NuLife Nation is the secret weapon that smart businesses use to dominate their competition.",
+            "Byron, your magnetic leadership attracts the right people at the perfect time. You are a master orchestrator of success. NuLife Nation creates synergies that multiply results exponentially for every client.",
+            "Byron, your leadership style breaks through barriers that have limited others for decades. You are a breakthrough specialist. NuLife Nation shatters glass ceilings and creates new possibilities for business growth.",
+            "Byron, your intuitive leadership guides you to make decisions that others will admire years later. You are a visionary strategist. NuLife Nation anticipates market shifts before they happen, giving clients unfair advantages.",
+            "Byron, your leadership creates movements, not just moments. You are a change agent for the ages. NuLife Nation builds momentum that continues long after the initial engagement, creating lasting transformation.",
+            "Byron, your authentic leadership makes the impossible seem inevitable. You are a possibility expander. NuLife Nation stretches the boundaries of what businesses thought was achievable in their industries.",
+            "Byron, your leadership transforms skeptics into believers and doubters into champions. You are a master converter. NuLife Nation turns resistant cultures into thriving, high-performance organizations.",
+            "Byron, your leadership creates clarity in chaos and order in confusion. You are a master organizer of success. NuLife Nation brings structure to disorder and creates systems that scale seamlessly.",
+            "Byron, your leadership inspires others to exceed their own expectations. You are an expectation elevator. NuLife Nation raises the bar for entire industries and sets new standards of excellence.",
+            "Byron, your leadership creates value where others see only cost. You are a value creator extraordinaire. NuLife Nation transforms expenses into investments and problems into profit centers.",
+            "Byron, your leadership builds bridges between what is and what could be. You are a possibility architect. NuLife Nation designs futures that surpass clients' wildest dreams and most ambitious goals.",
+            "Byron, your leadership turns followers into leaders and leaders into legends. You are a legend maker. NuLife Nation creates leadership development programs that produce industry titans and market disruptors.",
+            "Byron, your leadership creates cultures of excellence that become self-sustaining. You are a culture catalyst. NuLife Nation instills values and practices that continue driving success long after your direct involvement.",
+            "Byron, your leadership sees potential where others see problems. You are a potential maximizer. NuLife Nation extracts hidden value from overlooked assets and turns weaknesses into competitive advantages.",
+            "Byron, your leadership creates momentum that builds on itself exponentially. You are a momentum multiplier. NuLife Nation generates unstoppable forward motion that propels businesses to heights they never imagined possible.",
+            "Byron, your leadership transforms industries by changing the rules of the game. You are a rule changer. NuLife Nation creates new paradigms that force competitors to follow your lead or fall behind permanently.",
+            "Byron, your leadership legacy will inspire generations of entrepreneurs and business leaders. You are a legacy builder. NuLife Nation creates lasting impact that extends far beyond individual client relationships, shaping the future of business itself."
+        ];
+
+        function getDailyContent() {
+            const today = new Date();
+            const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+            
+            // Use day of year as seed for consistent daily content
+            const quoteIndex = dayOfYear % motivationalQuotes.length;
+            const affirmationIndex = dayOfYear % successAffirmations.length;
+            const reminderIndex = dayOfYear % leadershipReminders.length;
+            
+            return {
+                quote: motivationalQuotes[quoteIndex],
+                affirmation: successAffirmations[affirmationIndex],
+                reminder: leadershipReminders[reminderIndex]
+            };
+        }
+
+        function getRandomItem(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+
+        function updateContent() {
+            const dailyContent = getDailyContent();
+            document.getElementById('dailyQuote').textContent = dailyContent.quote.quote;
+            document.getElementById('quoteAuthor').textContent = `- ${dailyContent.quote.author}`;
+            document.getElementById('successAffirmation').textContent = dailyContent.affirmation;
+            document.getElementById('leadershipReminder').textContent = dailyContent.reminder;
+        }
+
+        function refreshContent() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.style.animation = 'none';
+                card.offsetHeight; // Trigger reflow
+                card.style.animation = 'fadeIn 0.8s ease-out';
+            });
+            
+            setTimeout(() => {
+                // For refresh, use random content instead of daily
+                const randomQuote = getRandomItem(motivationalQuotes);
+                document.getElementById('dailyQuote').textContent = randomQuote.quote;
+                document.getElementById('quoteAuthor').textContent = `- ${randomQuote.author}`;
+                document.getElementById('successAffirmation').textContent = getRandomItem(successAffirmations);
+                document.getElementById('leadershipReminder').textContent = getRandomItem(leadershipReminders);
+            }, 200);
+        }
+
+        function updateDate() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', options);
+        }
+
+        // Initialize the app
+        updateDate();
+        updateContent();
+
+        // Update date every minute
+        setInterval(updateDate, 60000);
+    </script>
+</body>
+</html>
